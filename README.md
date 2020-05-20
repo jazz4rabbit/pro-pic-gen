@@ -1,11 +1,11 @@
 # pro-pic-gen
 Profile Picture Generator from image of `noto-emoji`.
 
-![emoji_u1f41b normal image](./images/favicon.svg)  
+<img src="./images/favicon.svg" alt="emoji_u1f41b normal image" width="64px" height="64px">
 
 ## How to Generate
 1. Pick the [image][noto_emoji] and you can get unicode.  
-(e.g. `U+1F41B` is ![emoji_u1f41b small image](./images/favicon.svg)(Bug) and the image is `noto-emoji/svg/emoji_u1f41b.svg`.
+(e.g. `U+1F41B` is <img src="./images/favicon.svg" alt="emoji_u1f41b small image" width="32px" height="32px"/>(Bug) and the image is `noto-emoji/svg/emoji_u1f41b.svg`.
 2. Convert `svg` to `profile.png` (256x256 or a specific size).
 3. Convert `svg` to `favicon.ico` (256, 192, 128, 96, 64, 48, 40, 32, 24, 16).
 ```bash
@@ -47,7 +47,7 @@ favicon.ico[9] ICO 16x16 16x16+0+0 8-bit sRGB 416772B 0.000u 0:00.000
 
 
 ## Is :t-rex: a :bug:?
-[![Is jordy a bug?](./images/IS_Jordy_A_BUG.jpg)][jordy_official]
+[![Is jordy a bug?](./images/IS_JORDY_A_BUG.jpg)][jordy_official]
 
 ## Reference
 [jordy official][jordy_official]
