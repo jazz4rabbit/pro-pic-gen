@@ -47,26 +47,13 @@ favicon.ico[9] ICO 16x16 16x16+0+0 8-bit sRGB 416772B 0.000u 0:00.000
 
 
 ## Is :t-rex: a :bug:?
-[![Is jordy a bug?](./images/IS_JORDY_A_BUG.jpg)][jordy_official]
+[<img src="./images/IS_JORDY_A_BUG.jpg" alt="Is jordy a bug?" width="512px">][jordy_official]
 
 ## Reference
 [jordy official][jordy_official]
 
 ## License
 This code is under the [Apache License, version 2.0](./LICENSE).
-
-
-<style>
-img[alt="emoji_u1f41b small image"] {
-  width: 32px;
-}
-img[alt="emoji_u1f41b normal image"] {
-  width: 64px;
-}
-img[alt="Is jordy a bug?"] {
-  width: 512px;
-}
-</style>
 
 [jordy_official]: https://www.instagram.com/niniz_official
 [noto_emoji]: https://www.google.com/get/noto/help/emoji/animals-nature
