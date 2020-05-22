@@ -5,7 +5,7 @@ Profile Picture Generator from image of `twemoji`.
 
 ## How to Generate
 1. Pick the [image][twemoji] and you can get unicode.  
-(e.g. `U+1F41B` is <img src="./images/1f41b.svg" alt="emoji_u1f41b small image" width="32px" height="32px"/>(Bug) and the image is `twemoji/svg/emoji_u1f41b.svg`.
+(e.g. `U+1F41B` is <img src="./images/1f41b.svg" alt="emoji_u1f41b small image" width="32px" height="32px"/>(Bug) and the image is `twemoji/assets/svg/u1f41b.svg`.
 2. Convert `svg` to `1f41b_profile_512.png` (512x512 or a specific size).
 3. Convert `svg` to `1f41b.ico` (256, 192, 128, 96, 64, 48, 40, 32, 24, 16).
 ```bash
