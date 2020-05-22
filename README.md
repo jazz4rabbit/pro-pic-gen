@@ -1,59 +1,58 @@
 # pro-pic-gen
-Profile Picture Generator from image of `noto-emoji`.
+Profile Picture Generator from image of `twemoji`.
 
-<img src="./images/favicon.svg" alt="emoji_u1f41b normal image" width="64px" height="64px">
+<img src="./images/1f41b.svg" alt="emoji_u1f41b normal image" width="64px" height="64px">
 
 ## How to Generate
-1. Pick the [image][noto_emoji] and you can get unicode.  
-(e.g. `U+1F41B` is <img src="./images/favicon.svg" alt="emoji_u1f41b small image" width="32px" height="32px"/>(Bug) and the image is `noto-emoji/svg/emoji_u1f41b.svg`.
-2. Convert `svg` to `profile.png` (256x256 or a specific size).
-3. Convert `svg` to `favicon.ico` (256, 192, 128, 96, 64, 48, 40, 32, 24, 16).
+1. Pick the [image][twemoji] and you can get unicode.  
+(e.g. `U+1F41B` is <img src="./images/1f41b.svg" alt="emoji_u1f41b small image" width="32px" height="32px"/>(Bug) and the image is `twemoji/svg/emoji_u1f41b.svg`.
+2. Convert `svg` to `1f41b_profile_512.png` (512x512 or a specific size).
+3. Convert `svg` to `1f41b.ico` (256, 192, 128, 96, 64, 48, 40, 32, 24, 16).
 ```bash
 brew install https://github.com/Homebrew/homebrew-core/raw/46a2ef7c9f0380b8e19f8dfe37270caa27581353/Formula/imagemagick.rb --with-librsvg    # actually, `brew install imageMagick` doesn't work properly>
 
-# clone noto-emoji
+# clone twemoji
+git clone --depth 1 --branch v13.0.0 \
+    https://github.com/twitter/twemoji.git
+cp ./twemoji/assets/svg/${ucode}.svg ./images/${ucode}.svg
 
-git clone --depth 1 --branch v2020-04-08-unicode12_1 \
-    https://github.com/googlefonts/noto-emoji.git && cd noto-emoji
-cp ./svg/emoji_u1f41b.svg ./favicon.svg
-
+ucode="1f41b"
 # you may check input image size
-# identify favicon.svg
+# identify ${ucode}.svg
 
 # generate png image (input: 128x128, target: 512x512)
 # There aren't "magic" parameter.
-magick -background transparent -density "%[fx:96*512/128]" favicon.svg profile.png
+magick -background transparent -density "%[fx:96*512/36]" ./images/${ucode}.svg ./images/${ucode}_profile_512.png
 # generate ico image (compress images using icon:auto-resize parameter)
-magick -density "%[fx:96*256/128]" -background transparent favicon.svg \
+magick -density "%[fx:96*256/36]" -background transparent favicon.svg \
     -define icon:auto-resize -colors 256 favicon.ico
 ```
 
-Also, You can check the `favicon.ico`.
+Also, You can check the `1f41b.ico`.
 ```bash
-identify favicon.ico
+identify 1f41b.ico
 
 # log
-favicon.ico[0] PNG 256x256 256x256+0+0 16-bit sRGB 117654B 0.000u 0:00.003
-favicon.ico[1] ICO 192x192 192x192+0+0 8-bit sRGB 0.000u 0:00.003
-favicon.ico[2] ICO 128x128 128x128+0+0 8-bit sRGB 0.000u 0:00.001
-favicon.ico[3] ICO 96x96 96x96+0+0 8-bit sRGB 0.000u 0:00.001
-favicon.ico[4] ICO 64x64 64x64+0+0 8-bit sRGB 0.000u 0:00.000
-favicon.ico[5] ICO 48x48 48x48+0+0 8-bit sRGB 0.000u 0:00.000
-favicon.ico[6] ICO 40x40 40x40+0+0 8-bit sRGB 0.000u 0:00.000
-favicon.ico[7] ICO 32x32 32x32+0+0 8-bit sRGB 0.000u 0:00.000
-favicon.ico[8] ICO 24x24 24x24+0+0 8-bit sRGB 0.000u 0:00.000
-favicon.ico[9] ICO 16x16 16x16+0+0 8-bit sRGB 416772B 0.000u 0:00.000
+1f41b.ico[0] PNG 256x256 256x256+0+0 8-bit sRGB 13268B 0.000u 0:00.000
+1f41b.ico[1] ICO 192x192 192x192+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[2] ICO 128x128 128x128+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[3] ICO 96x96 96x96+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[4] ICO 64x64 64x64+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[5] ICO 48x48 48x48+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[6] ICO 40x40 40x40+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[7] ICO 32x32 32x32+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[8] ICO 24x24 24x24+0+0 8-bit sRGB 0.000u 0:00.000
+1f41b.ico[9] ICO 16x16 16x16+0+0 8-bit sRGB 312370B 0.000u 0:00.000
 ```
 
-
-## Is :t-rex: a :bug:?
+## Q: Is Jordy a :bug:?<br />A: :t-rex:...
 [<img src="./images/IS_JORDY_A_BUG.jpg" alt="Is jordy a bug?" width="512px">][jordy_official]
 
 ## Reference
 [jordy official][jordy_official]
 
 ## License
-This code is under the [Apache License, version 2.0](./LICENSE).
+This code is under the [MIT License](./LICENSE).
 
 [jordy_official]: https://www.instagram.com/niniz_official
-[noto_emoji]: https://www.google.com/get/noto/help/emoji/animals-nature
+[twemoji]: https://twitter.github.io/twemoji/v/13.0.0/preview.html
